@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCY-ir-VcC">
                                 <rect key="frame" x="289" y="16" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Iai-Kf-iCg"/>
+                                    <constraint firstAttribute="width" constant="70" id="Iai-Kf-iCg"/>
                                     <constraint firstAttribute="height" constant="70" id="MkN-8x-BhR"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -33,26 +34,25 @@
                                     <segue destination="U2g-mK-3iX" kind="presentation" id="X9S-HH-ILh"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NnQ-4n-ad9">
-                                <rect key="frame" x="137.5" y="167.5" width="100" height="332"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NnQ-4n-ad9">
+                                <rect key="frame" x="137.5" y="120" width="100" height="340"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYO-FD-xEP">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <color key="backgroundColor" red="0.99715250730000005" green="0.48128074409999999" blue="0.55499219889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="I65-tH-Ro3"/>
-                                            <constraint firstAttribute="height" constant="100" id="IHx-fa-AIS"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CO7-fg-Dyc">
-                                        <rect key="frame" x="0.0" y="116" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="120" width="100" height="100"/>
                                         <color key="backgroundColor" red="0.99715250730000005" green="0.91459495723642659" blue="0.55499219889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pF9-ug-9cL">
-                                        <rect key="frame" x="0.0" y="232" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="240" width="100" height="100"/>
                                         <color key="backgroundColor" red="0.23015701891910073" green="0.80008034035451747" blue="0.67891739825813135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NnQ-4n-ad9" secondAttribute="height" multiplier="5:17" id="L54-n3-dOl"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcN-bH-KO1">
                                 <rect key="frame" x="157.5" y="577" width="60" height="60"/>
@@ -76,12 +76,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.78108173609999998" green="0.99951678509999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="NnQ-4n-ad9" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="100:667" id="1OS-5b-Kh3"/>
+                            <constraint firstItem="NnQ-4n-ad9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7XT-Yb-ui6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LcN-bH-KO1" secondAttribute="bottom" constant="30" id="EFJ-uZ-u8S"/>
                             <constraint firstItem="LcN-bH-KO1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MsV-Nh-paS"/>
-                            <constraint firstItem="NnQ-4n-ad9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bAI-vR-hB7"/>
-                            <constraint firstItem="oCY-ir-VcC" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="500" id="ckp-Tw-PEi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oCY-ir-VcC" secondAttribute="trailing" constant="16" id="hKO-Hm-aqv"/>
-                            <constraint firstItem="NnQ-4n-ad9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lVj-Fi-f36"/>
+                            <constraint firstItem="NnQ-4n-ad9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="lsL-wf-bhL"/>
                             <constraint firstItem="oCY-ir-VcC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="w4B-MI-0vD"/>
                         </constraints>
                     </view>
@@ -105,46 +105,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfL-mf-fB2">
-                                <rect key="frame" x="239" y="16" width="120" height="70"/>
+                                <rect key="frame" x="329" y="16" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="gcW-F5-Gtp"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="owN-aH-4v1"/>
+                                    <constraint firstAttribute="height" constant="30" id="gcW-F5-Gtp"/>
+                                    <constraint firstAttribute="width" constant="30" id="owN-aH-4v1"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Traffic Light" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="plain" title="X" cornerStyle="capsule">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.2286551582402743" green="0.8171543296541135" blue="0.80389184896837795" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.99715250730000005" green="0.48128074409999999" blue="0.55499219889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="trafficLightButtonTapped" destination="U2g-mK-3iX" eventType="touchUpInside" id="5yX-gF-5ST"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rZJ-So-ZMh">
-                                <rect key="frame" x="16" y="106" width="343" height="435"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-Nx-fbM">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="213.5"/>
-                                        <color key="backgroundColor" red="0.70756995680000001" green="0.91571718449999995" blue="0.84221982959999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpL-Gd-qNN">
-                                        <rect key="frame" x="0.0" y="221.5" width="343" height="213.5"/>
-                                        <color key="backgroundColor" red="0.86839300389999996" green="0.96367067100000003" blue="0.80599552389999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9J-S0-7WI">
+                                <rect key="frame" x="16" y="62" width="343" height="274.5"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hc-s4-4QL">
+                                <rect key="frame" x="16" y="356.5" width="343" height="274.5"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two colors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8w-rF-60Z">
+                                <rect key="frame" x="146" y="20" width="83" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="IMA-4r-Gc3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="lMK-6J-1pB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kdA-bQ-jeI"/>
                         <color key="backgroundColor" red="0.78146475550000005" green="1" blue="0.9979613423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rZJ-So-ZMh" firstAttribute="top" secondItem="RfL-mf-fB2" secondAttribute="bottom" constant="20" id="3Pu-He-Ab8"/>
-                            <constraint firstItem="kdA-bQ-jeI" firstAttribute="trailing" secondItem="bjv-Nx-fbM" secondAttribute="trailing" constant="16" id="C5W-n5-Fsy"/>
+                            <constraint firstItem="kdA-bQ-jeI" firstAttribute="bottom" secondItem="8Hc-s4-4QL" secondAttribute="bottom" constant="16" id="8Ee-aJ-69z"/>
+                            <constraint firstItem="kdA-bQ-jeI" firstAttribute="trailing" secondItem="t9J-S0-7WI" secondAttribute="trailing" constant="16" id="GaE-Od-GFs"/>
                             <constraint firstItem="kdA-bQ-jeI" firstAttribute="trailing" secondItem="RfL-mf-fB2" secondAttribute="trailing" constant="16" id="MPj-TQ-tZK"/>
-                            <constraint firstItem="rZJ-So-ZMh" firstAttribute="centerY" secondItem="kdA-bQ-jeI" secondAttribute="centerY" id="sCG-j1-W5Q"/>
+                            <constraint firstItem="e8w-rF-60Z" firstAttribute="centerX" secondItem="kdA-bQ-jeI" secondAttribute="centerX" id="aTL-fe-1L8"/>
+                            <constraint firstItem="t9J-S0-7WI" firstAttribute="leading" secondItem="kdA-bQ-jeI" secondAttribute="leading" constant="16" id="fHH-Ut-OlG"/>
+                            <constraint firstItem="kdA-bQ-jeI" firstAttribute="trailing" secondItem="8Hc-s4-4QL" secondAttribute="trailing" constant="16" id="ggS-tj-Apc"/>
+                            <constraint firstItem="8Hc-s4-4QL" firstAttribute="leading" secondItem="kdA-bQ-jeI" secondAttribute="leading" constant="16" id="hZB-gH-ZZH"/>
+                            <constraint firstItem="8Hc-s4-4QL" firstAttribute="top" secondItem="t9J-S0-7WI" secondAttribute="bottom" constant="20" id="mre-67-iXF"/>
+                            <constraint firstItem="e8w-rF-60Z" firstAttribute="top" secondItem="kdA-bQ-jeI" secondAttribute="top" constant="20" id="rog-7R-7sM"/>
+                            <constraint firstItem="8Hc-s4-4QL" firstAttribute="height" secondItem="t9J-S0-7WI" secondAttribute="height" id="s28-xn-3Fw"/>
+                            <constraint firstItem="t9J-S0-7WI" firstAttribute="top" secondItem="RfL-mf-fB2" secondAttribute="bottom" constant="16" id="unn-SA-cBR"/>
                             <constraint firstItem="RfL-mf-fB2" firstAttribute="top" secondItem="kdA-bQ-jeI" secondAttribute="top" constant="16" id="yhf-gR-uLe"/>
-                            <constraint firstItem="rZJ-So-ZMh" firstAttribute="centerX" secondItem="kdA-bQ-jeI" secondAttribute="centerX" id="ykl-vs-Suc"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -153,4 +164,12 @@
             <point key="canvasLocation" x="941.60000000000002" y="109.29535232383809"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

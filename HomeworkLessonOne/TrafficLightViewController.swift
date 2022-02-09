@@ -7,46 +7,55 @@
 
 import UIKit
 
+enum CurrentLight {
+    case red
+    case yellow
+    case green
+}
+
 class TrafficLightViewController: UIViewController {
-
-
-   
+    
     @IBOutlet weak var redLightView: UIView!
     @IBOutlet weak var yellowLightView: UIView!
     @IBOutlet weak var greenLightView: UIView!
+    
     @IBOutlet weak var startButton: UIButton!
-    var light = "green"
+    
+    private let lightIsOn: CGFloat = 1
+    private let lightIsOff: CGFloat = 0.3
+    private var currentLight = CurrentLight.green
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redLightView.layer.cornerRadius = 50
-        redLightView.layer.opacity = 0.3
-        yellowLightView.layer.cornerRadius = 50
-        yellowLightView.layer.opacity = 0.3
-        greenLightView.layer.cornerRadius = 50
-        greenLightView.layer.opacity = 0.3
+        redLightView.alpha = lightIsOff
+        yellowLightView.alpha = lightIsOff
+        greenLightView.alpha = lightIsOff
     }
+    
+    override func viewWillLayoutSubviews() { // Важно, если мы хотим делать размеры динамическими, то -> в методе viewDidLoad мы еще не знаем чему будет равна ширина, это значение становится известным в методе viewWillLayoutSubviews. Иначе, расчеты стоит перенети во viewDidLoad.
+        redLightView.layer.cornerRadius = redLightView.frame.width / 2
+        yellowLightView.layer.cornerRadius = redLightView.frame.width / 2
+        greenLightView.layer.cornerRadius = redLightView.frame.width / 2
+    }
+    
     @IBAction func startButtonTapped() {
         
         startButton.setTitle("Next", for: .normal)
-        redLightView.layer.opacity = 0.3
-        yellowLightView.layer.opacity = 0.3
-        greenLightView.layer.opacity = 0.3
         
-        switch light {
-        case "red":
-            yellowLightView.layer.opacity = 1
-            light = "yellow"
-        case "yellow":
-            greenLightView.layer.opacity = 1
-            light = "green"
-        case "green":
-            redLightView.layer.opacity = 1
-            light = "red"
-        default:
-            break
+        switch currentLight {
+        case .red:
+            redLightView.alpha = lightIsOff
+            yellowLightView.alpha = lightIsOn
+            currentLight = .yellow
+        case .yellow:
+            yellowLightView.alpha = lightIsOff
+            greenLightView.alpha = lightIsOn
+            currentLight = .green
+        case .green:
+            greenLightView.alpha = lightIsOff
+            redLightView.alpha = lightIsOn
+            currentLight = .red
         }
     }
 }
-
